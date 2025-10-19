@@ -2,7 +2,7 @@
 // Version professionnelle avec sécurité JWT, CORS, protection des routes
 const express = require("express");
 const Database = require("better-sqlite3");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const path = require("path");
 const jwt = require("jsonwebtoken");
 const cors = require("cors");
