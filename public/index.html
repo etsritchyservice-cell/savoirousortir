@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Site d'Évènements</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/747/747310.png" type="image/png">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="logo.png" alt="Logo du site">
+    </div>
+    <!-- Bannière publicitaire -->
+    <div class="banner">
+      <img src="banner.jpg" alt="Publicité">
+    </div>
+    <!-- Barre de navigation -->
+    <nav class="main-nav">
+      <button class="hamburger" id="hamburger-btn">☰</button>
+      <ul id="nav-links">
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">À propos</a></li>
+        <li><a href="#">Évènements à venir</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <!-- Section utilisateur -->
+      <div class="user-auth">
+        <div id="user-info" class="user-info">
+          <button id="loginBtn" class="btn-login">Connexion</button>
+          <button id="registerBtn" class="btn-register">Inscription</button>
+        </div>
+        <div id="user-logged" class="user-logged" style="display:none;">
+          <span id="userNameDisplay"></span>
+          <button id="logoutBtn" class="btn-logout">Déconnexion</button>
+        </div>
+      </div>
+    </nav>
+    <!-- Recherche -->
+    <div class="search-banner">
+      <form id="searchEventsForm">
+        <input type="text" placeholder="Rechercher un événement…" name="q">
+        <button type="submit">🔍</button>
+      </form>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+    <!-- Événements mis en avant -->
+    <section class="featured-events">
+      <h2>Événements mis en avant</h2>
+      <div class="cards-wrapper">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1525186402429-b4ff38bedbec?auto=format&fit=crop&w=800&q=60" alt="Concert">
+          <h3>Festival de Musique</h3>
+          <p>15–17 juin • Paris</p>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=60" alt="Exposition">
+          <h3>Exposition d’Art Moderne</h3>
+          <p>10–20 août • Lyon</p>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=60" alt="Conférence">
+          <h3>Conférence Tech 2025</h3>
+          <p>5 septembre • Marseille</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard utilisateur -->
+    <section id="user-dashboard" class="user-dashboard" style="display:none;">
+      <h2>Mon espace</h2>
+      <div class="dashboard-intro">
+        <p>Bienvenue <span id="dashUserName"></span> 👋</p>
+        <button id="btnNewEvent" class="btn-primary">Publier un nouvel événement</button>
+      </div>
+      <!-- Formulaire de création d'événement -->
+      <form id="eventForm" class="event-form" style="display:none;">
+        <h3>Nouvel événement</h3>
+        <div class="row">
+          <div class="col">
+            <label>Titre</label>
+            <input type="text" name="title" required>
+          </div>
+          <div class="col">
+            <label>Date</label>
+            <input type="date" name="date" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label>Lieu</label>
+            <input type="text" name="place" required>
+          </div>
+          <div class="col">
+            <label>Catégorie</label>
+            <input type="text" name="category" placeholder="Musique, Sport, Pro...">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label>Description</label>
+            <textarea name="description" rows="3"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn-primary">Publier</button>
+      </form>
+      <div id="myEvents" class="my-events"></div>
+    </section>
+
+    <!-- Évènements à venir -->
+    <section class="events upcoming-events">
+      <h2>Évènements à venir</h2>
+      <div class="events-upcoming">
+        <div class="event-card">
+          <h4>Évènement 1</h4>
+          <p>Description de l'évènement 1</p>
+        </div>
+        <div class="event-card">
+          <h4>Évènement 2</h4>
+          <p>Description de l'évènement 2</p>
+        </div>
+        <div class="event-card">
+          <h4>Évènement 3</h4>
+          <p>Description de l'évènement 3</p>
+        </div>
+        <div class="event-card">
+          <h4>Évènement 4</h4>
+          <p>Description de l'évènement 4</p>
+        </div>
+        <div class="event-card">
+          <h4>Évènement 5</h4>
+          <p>Description de l'évènement 5</p>
+        </div>
+      </div>
+      <div id="eventsContainer" class="event-list"></div>
+    </section>
+
+    <!-- Évènements passés -->
+    <section class="events-older">
+      <h2>Évènements passés</h2>
+      <div class="events-older-list">
+        <div class="event-card">
+          <h4>Évènement 6</h4>
+          <p>Description de l'évènement 6</p>
+        </div>
+        <div class="event-card">
+          <h4>Évènement 7</h4>
+          <p>Description de l'évènement 7</p>
+        </div>
+        <div class="event-card">
+          <h4>Évènement 8</h4>
+          <p>Description de l'évènement 8</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- À propos -->
+    <section class="about-section">
+      <h2>À propos de MonSite Événements</h2>
+      <p>Notre plateforme permet de découvrir les événements culturels, sportifs et professionnels partout en France. Trouvez ce qui vous passionne et participez à vos prochaines sorties facilement.</p>
+    </section>
+
+    <!-- Témoignages -->
+    <section class="testimonials-section">
+      <h2>Témoignages</h2>
+      <div class="testimonials-wrapper">
+        <div class="testimonial">
+          <p>“J’ai découvert de super concerts grâce à ce site !”</p>
+          <span>— Léa, Paris</span>
+        </div>
+        <div class="testimonial">
+          <p>“Simple, clair et pratique. Je recommande à tous les amateurs d’événements.”</p>
+          <span>— Karim, Lyon</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© 2025 MonSite Événements. Tous droits réservés.</p>
+    <div class="social-links">
+      <a href="#">Facebook</a> |
+      <a href="#">Instagram</a> |
+      <a href="#">Twitter</a>
+    </div>
+  </footer>
+
+  <!-- Modal Auth -->
+  <div id="authModal" class="auth-modal">
+    <div class="auth-modal-content">
+      <span id="closeModal" class="close-modal">&times;</span>
+      <div id="authForms">
+        <!-- Le formulaire sera injecté ici par script.js -->
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

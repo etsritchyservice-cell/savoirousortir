@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Connexion - MonSite Événements (local)</title>
+  <link rel="stylesheet" href="module.css">
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <div class="brand">MonSite — Connexion</div>
+      <div>
+        <a href="register.html" class="help-link">Créer un compte</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Connexion</h2>
+      <form id="loginForm" autocomplete="off">
+        <div class="row">
+          <div class="col">
+            <label for="l_email">Email</label>
+            <input id="l_email" name="email" type="email" required>
+          </div>
+          <div class="col">
+            <label for="l_password">Mot de passe</label>
+            <input id="l_password" name="password" type="password" required>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:12px;align-items:center;margin-top:12px;">
+          <button class="btn" type="submit">Se connecter</button>
+          <button class="btn secondary" type="button" id="guestBtn">Se connecter en invité</button>
+        </div>
+
+        <p class="small" style="margin-top:10px;color:var(--muted)">
+          Si tu as oublié ton mot de passe : en local il n'y a pas de reset automatique. Tu peux recréer un compte.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <script src="module.js"></script>
+  <script>
+    initLogin();
+  </script>
+</body>
+</html>

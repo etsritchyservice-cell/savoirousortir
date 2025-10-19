@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tableau de bord - MonSite Événements (local)</title>
+  <link rel="stylesheet" href="module.css">
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <div>
+        <span class="brand">MonSite — Tableau de bord</span>
+        <div id="userBadge" style="font-size:0.9rem;color:var(--muted)"></div>
+      </div>
+      <div>
+        <button class="btn secondary" id="logoutBtn">Se déconnecter</button>
+      </div>
+    </div>
+
+    <div id="mainArea">
+      <!-- Dashboard content injected by module.js -->
+    </div>
+
+    <div style="height:28px"></div>
+  </div>
+
+  <script src="module.js"></script>
+  <script>
+    initDashboard();
+  </script>
+</body>
+</html>

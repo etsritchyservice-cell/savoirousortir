@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Inscription - MonSite Événements (local)</title>
+  <link rel="stylesheet" href="module.css">
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <div class="brand">MonSite — Inscription</div>
+      <div>
+        <a href="login.html" class="help-link">J'ai déjà un compte — Connexion</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Créer un compte</h2>
+      <p class="small">Crée ton compte et renseigne ton établissement (si tu en as un).</p>
+
+      <form id="registerForm" autocomplete="off">
+        <h3>Infos personnelles</h3>
+        <div class="row">
+          <div class="col">
+            <label for="r_firstname">Prénom</label>
+            <input id="r_firstname" name="firstname" type="text" required>
+          </div>
+          <div class="col">
+            <label for="r_lastname">Nom</label>
+            <input id="r_lastname" name="lastname" type="text" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label for="r_email">Email</label>
+            <input id="r_email" name="email" type="email" required>
+          </div>
+          <div class="col">
+            <label for="r_phone">Téléphone</label>
+            <input id="r_phone" name="phone" type="tel">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label for="r_password">Mot de passe</label>
+            <input id="r_password" name="password" type="password" required minlength="8">
+          </div>
+          <div class="col">
+            <label for="r_password2">Confirmer le mot de passe</label>
+            <input id="r_password2" name="password2" type="password" required minlength="8">
+          </div>
+        </div>
+
+        <hr>
+
+        <h3>Infos de l'établissement (optionnel)</h3>
+        <div class="row">
+          <div class="col">
+            <label for="e_name">Nom de l'établissement</label>
+            <input id="e_name" name="est_name" type="text">
+          </div>
+          <div class="col">
+            <label for="e_type">Type</label>
+            <select id="e_type" name="est_type">
+              <option value="">— Choisir —</option>
+              <option value="bar">Bar / Club</option>
+              <option value="salle">Salle de spectacle</option>
+              <option value="association">Association</option>
+              <option value="restaurant">Restaurant</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label for="e_address">Adresse</label>
+            <input id="e_address" name="est_address" type="text">
+          </div>
+          <div class="col">
+            <label for="e_siret">SIRET / SIREN</label>
+            <input id="e_siret" name="est_siret" type="text" pattern="\d*">
+          </div>
+        </div>
+
+        <div style="display:flex;gap:12px;align-items:center;margin-top:12px;">
+          <button class="btn" type="submit">S'inscrire</button>
+          <button class="btn secondary" type="button" id="seedAdminBtn">Créer compte admin (dev)</button>
+        </div>
+
+        <p class="small" style="margin-top:10px;color:var(--muted)">
+          Notes : mot de passe minimum 8 caractères. En local les données sont stockées dans votre navigateur.
+        </p>
+      </form>
+    </div>
+
+    <div class="card">
+      <h4>Besoin d'aide</h4>
+      <p class="small">Après inscription, tu seras redirigé vers le tableau de bord pour gérer tes événements.</p>
+    </div>
+  </div>
+
+  <script src="module.js"></script>
+  <script>
+    // quick hook: register page uses initRegister()
+    initRegister();
+  </script>
+</body>
+</html>

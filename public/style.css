@@ -1,0 +1,412 @@
+/* --- Boutons Connexion/Inscription/Déconnexion --- */
+.user-auth .btn-login,
+.user-auth .btn-register,
+.user-auth .btn-logout {
+  background: #fff;
+  border: 2px solid #007bff;
+  border-radius: 6px;
+  padding: 0.6rem 1.3rem;
+  color: #007bff;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  margin: 0 0.2rem;
+}
+.user-auth .btn-login:hover,
+.user-auth .btn-register:hover {
+  background: #007bff;
+  color: #fff;
+  border-color: #0056b3;
+}
+.user-auth .btn-logout:hover {
+  background: #dc3545;
+  color: #fff;
+  border-color: #dc3545;
+}
+
+/* --- Modale d'authentification --- */
+.auth-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.auth-modal-content {
+  background: #fff;
+  padding: 2.5rem 2rem 2rem 2rem;
+  border-radius: 12px;
+  width: 95%;
+  max-width: 400px;
+  box-shadow: 0 4px 24px rgba(0,123,255,0.12);
+  position: relative;
+  color: #333;
+}
+.auth-modal-content h3 {
+  color: #007bff;
+  margin-top: 0;
+  margin-bottom: 1.1rem;
+  font-size: 1.25rem;
+  text-align: center;
+}
+.auth-modal-content input[type="email"],
+.auth-modal-content input[type="password"],
+.auth-modal-content input[type="text"] {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1.5px solid #007bff;
+  background: #f7fbff;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+.auth-modal-content button[type="submit"] {
+  width: 100%;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.65rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 0.7rem;
+  transition: background 0.2s;
+}
+.auth-modal-content button[type="submit"]:hover {
+  background: #0056b3;
+}
+.auth-modal-content p {
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+.auth-modal-content a {
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.auth-modal-content a:hover {
+  color: #0056b3;
+}
+
+/* --- Message d'erreur ou succès --- */
+.auth-modal-content .auth-message {
+  color: #dc3545;
+  background: #fff0f2;
+  border: 1px solid #dc3545;
+  border-radius: 8px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 0.98rem;
+}
+
+/* --- Header, logo, banner --- */
+header.site-header {
+  background: #007bff;
+  color: #fff;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+}
+.logo {
+  padding: 1rem 2rem 0.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.logo img {
+  height: 48px;
+}
+.banner {
+  width: 100%;
+  background: #fff;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+.banner img {
+  max-width: 100%;
+  height: 60px;
+  object-fit: cover;
+}
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  background: #007bff;
+}
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: #fff;
+}
+#nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.3rem;
+  margin: 0;
+  padding: 0;
+}
+#nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.4rem 0.8rem;
+  transition: background 0.2s;
+}
+#nav-links li a:hover {
+  background: #0056b3;
+  border-radius: 4px;
+}
+
+/* --- Recherche --- */
+.search-banner {
+  background: #eaf3ff;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+.search-banner form {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.search-banner input[type="text"] {
+  width: 300px;
+  max-width: 90vw;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.search-banner button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+}
+
+/* --- Main content --- */
+.content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* --- Événements mis en avant --- */
+.featured-events {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+  padding: 2rem;
+}
+.cards-wrapper {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card {
+  background: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  padding: 1rem;
+  max-width: 250px;
+  text-align: center;
+}
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.7rem;
+}
+.card h3 {
+  margin: 0.4rem 0;
+  color: #007bff;
+}
+
+/* --- Tableau de bord --- */
+.user-dashboard {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+.dashboard-intro {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.btn-primary {
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+}
+.btn-primary:hover {
+  background: #0056b3;
+}
+.event-form input, .event-form textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.event-form label {
+  font-weight: bold;
+}
+.row {
+  display: flex;
+  gap: 1rem;
+}
+.col {
+  flex: 1;
+}
+.my-events {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* --- Événements publics --- */
+.event-list {
+  display: grid;
+  gap: 1rem;
+  background: #fff;
+  padding: 2rem;
+  margin-top: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* --- Section Évènements à venir & passés --- */
+.events-upcoming, .events-older-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+}
+.event-card {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  min-width: 200px;
+  max-width: 260px;
+}
+.event-card h4 {
+  color: #007bff;
+  margin-bottom: 0.3rem;
+}
+
+/* --- À propos & Témoignages --- */
+.about-section, .testimonials-section {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+.testimonials-wrapper {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.testimonial {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  max-width: 300px;
+}
+.testimonial span {
+  color: #007bff;
+  font-size: 0.95em;
+}
+
+/* --- Footer --- */
+.site-footer {
+  background: #007bff;
+  color: #fff;
+  text-align: center;
+  padding: 1.2rem 0;
+  margin-top: 2rem;
+  border-top: 3px solid #0056b3;
+}
+.social-links a {
+  color: #fff;
+  text-decoration: underline;
+  margin: 0 0.5rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .cards-wrapper, .events-upcoming, .events-older-list, .testimonials-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .main-nav, .search-banner {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .content {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  header.site-header, .main-nav {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+  .logo {
+    justify-content: center;
+    padding: 0.5rem 0;
+  }
+  .banner img {
+    height: 40px;
+  }
+  #nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .user-dashboard, .event-list, .about-section, .testimonials-section, .featured-events {
+    margin: 1rem 0.3rem;
+    padding: 1rem;
+  }
+  .event-card, .card, .testimonial {
+    max-width: 98vw;
+    min-width: unset;
+  }
+  .search-banner input[type="text"] {
+    width: 98vw;
+    max-width: 98vw;
+  }
+  .hamburger {
+    display: block;
+  }
+  #nav-links {
+    display: none;
+  }
+  .main-nav.active #nav-links {
+    display: flex;
+  }
+}
